@@ -21,10 +21,12 @@ body{
 }
 
 header{
-  background:linear-gradient(135deg,#003366,#005baa);
-  color:white;
-  padding:70px 20px;
-  text-align:center;
+position:relative;
+overflow:hidden;
+background:linear-gradient(135deg,#003366,#005baa);
+color:white;
+padding:120px 20px;
+text-align:center;
 }
 
 header h1{
@@ -145,7 +147,28 @@ footer{
   font-weight:bold;
   box-shadow:0 8px 20px rgba(0,0,0,0.25);
 }
+.logo-fondo{
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:360px;
+height:360px;
+background-image:url('logo.jpeg');
+background-size:contain;
+background-repeat:no-repeat;
+background-position:center;
+opacity:0.14;
+pointer-events:none;
+z-index:0;
+}
 
+header h1,
+header p,
+header a{
+position:relative;
+z-index:1;
+}
 @media(max-width:600px){
   header h1{
     font-size:34px;
@@ -162,14 +185,7 @@ footer{
 
 <header>
   <div class="logo-fondo"></div>
-  alt="RTV Microondas"
-  style="
-  width:180px;
-  margin-bottom:20px;
-  border-radius:12px;
-  background:white;
-  padding:10px;
-  ">
+  
   <h1>RTV Microondas</h1>
   <p>Reparación especializada de microondas con diagnóstico por WhatsApp, recojo, entrega y garantía de 3 meses.</p>
   <a class="btn" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20quiero%20enviar%20un%20video%20para%20diagnóstico%20de%20mi%20microondas.">

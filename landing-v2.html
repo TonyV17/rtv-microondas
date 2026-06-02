@@ -274,19 +274,29 @@ h2{
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 }
 
-.beneficio img{
-  height:210px;
-  object-fit:contain;
-  background:#f7f9fc;
+.beneficios-section{
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,194,71,.10), transparent 25%),
+    linear-gradient(135deg,#eef5fb,#dfeaf4);
 }
 
-.zonas{
-  background:white;
-  padding:25px;
+.beneficios-grid{
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+.beneficio{
+  background:linear-gradient(180deg,#ffffff,#f5f9fc);
+}
+
+.beneficio img{
+  width:100%;
+  height:240px;
+  object-fit:contain;
+  object-position:center;
+  background:linear-gradient(135deg,#14364d,#071f35);
+  padding:18px;
   border-radius:18px;
-  text-align:center;
-  font-size:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  margin-bottom:18px;
 }
 
 .cta{
@@ -385,7 +395,7 @@ footer{
 
 <header>
   <div class="nav">
-    <img src="logo%20rtv.png" class="logo-nav" alt="RTV Servicios Electrónicos">
+    <img src="logo.jpeg" class="logo-nav" alt="RTV Servicios Electrónicos">
     <a class="btn-phone" href="https://wa.me/51920643518">📞 Llámanos: 920 643 518</a>
   </div>
 
@@ -416,31 +426,34 @@ footer{
   </div>
 </header>
 
-<section>
+<section class="beneficios-section">
   <div class="container">
-    <h2>¿Tu microondas presenta alguno de estos problemas?</h2>
+    <h2>¿Por qué elegir RTV?</h2>
 
-    <div class="grid problemas-grid">
-      <div class="card">
-        <img src="01_no_calienta.jpg" alt="No calienta">
-        <span class="numero">01</span>
-        <h3>No calienta</h3>
-        <p>Revisamos magnetrón, capacitor, diodo y sistema de alta tensión.</p>
-      </div>
+<div class="grid beneficios-grid">
 
-      <div class="card">
-        <img src="02_se_apaga_solo.jpg" alt="Se apaga solo">
-        <span class="numero">02</span>
-        <h3>Se apaga solo</h3>
-        <p>Evaluamos fusible, tarjeta, cableado y alimentación.</p>
-      </div>
+  <div class="card beneficio">
+    <img src="01_tecnicos_especializados_page-0001.jpg" alt="Técnicos especializados">
+    <span class="numero">01</span>
+    <h3>Técnicos especializados</h3>
+    <p>Atención experta en reparación de microondas.</p>
+  </div>
 
-      <div class="card">
-        <img src="03_hace_ruidos_extranos.jpg" alt="Hace ruidos extraños">
-        <span class="numero">03</span>
-        <h3>Hace ruidos extraños</h3>
-        <p>Detectamos fallas en motor, ventilador o componentes internos.</p>
-      </div>
+  <div class="card beneficio">
+    <img src="02_repuestos_calidad_page-0001.jpg" alt="Repuestos de calidad">
+    <span class="numero">02</span>
+    <h3>Repuestos de calidad</h3>
+    <p>Trabajamos con componentes confiables.</p>
+  </div>
+
+  <div class="card beneficio">
+    <img src="03_garantia_reparacion_page-0001.jpg" alt="Garantía de reparación">
+    <span class="numero">03</span>
+    <h3>Garantía de reparación</h3>
+    <p>Servicio respaldado con garantía de 3 meses.</p>
+  </div>
+
+</div>
 
       <div class="card">
         <img src="04_no_enciende.jpg" alt="No enciende">

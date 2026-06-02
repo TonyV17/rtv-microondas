@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RTV Microondas | Reparación especializada</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --azul1:#071f35;
+  --azul2:#14364d;
+  --azul3:#0b4f87;
+  --amarillo:#ffc247;
+  --verde:#25D366;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#0b1b35;
+  line-height:1.6;
+}
+
+header{
+  position:relative;
+  overflow:hidden;
+  color:white;
+  background:
+  radial-gradient(circle at 15% 20%,rgba(255,194,71,.12),transparent 25%),
+  linear-gradient(135deg,#071f35 0%,#14364d 55%,#0b4f87 100%);
+}
+
+header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.10) 1px,transparent 1px);
+  background-size:18px 18px;
+  opacity:.35;
+}
+
+.nav{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  margin:auto;
+  padding:25px 20px 45px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo-nav{
+  width:150px;
+}
+
+.btn-phone{
+  background:var(--amarillo);
+  color:var(--azul1);
+  padding:13px 20px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  margin:auto;
+  padding:10px 20px 75px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero small{
+  color:var(--amarillo);
+  font-weight:bold;
+}
+
+.hero h1{
+  font-size:56px;
+  line-height:1.05;
+  margin:15px 0;
+}
+
+.hero h1 span{
+  color:var(--amarillo);
+}
+
+.checks{
+  list-style:none;
+  font-size:19px;
+  margin:20px 0 28px;
+}
+
+.checks li{
+  margin:8px 0;
+}
+
+.checks li::before{
+  content:"✓";
+  background:var(--amarillo);
+  color:var(--azul1);
+  border-radius:50%;
+  padding:2px 7px;
+  margin-right:8px;
+  font-weight:bold;
+}
+
+.btn{
+  display:inline-block;
+  background:var(--verde);
+  color:white;
+  padding:17px 30px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.hero-img{
+  position:relative;
+  text-align:center;
+}
+
+.logo-watermark{
+  position:absolute;
+  right:0;
+  top:-80px;
+  width:430px;
+  opacity:.10;
+}
+
+.microondas{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:560px;
+  filter:drop-shadow(0 28px 30px rgba(0,0,0,.45));
+}
+
+.badge{
+  position:absolute;
+  right:20px;
+  bottom:0;
+  z-index:3;
+  background:#071f35;
+  border:2px solid var(--amarillo);
+  color:white;
+  padding:16px 22px;
+  border-radius:18px;
+  font-weight:bold;
+}
+
+section{
+  padding:60px 20px;
+}
+
+.container{
+  max-width:1150px;
+  margin:auto;
+}
+
+h2{
+  text-align:center;
+  color:#092b4c;
+  font-size:34px;
+  margin-bottom:35px;
+}
+
+.grid{
+  display:grid;
+  gap:22px;
+}
+
+.problemas-grid{
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 10px 28px rgba(0,0,0,.09);
+  text-align:center;
+}
+
+.card img{
+  width:100%;
+  height:145px;
+  object-fit:cover;
+  border-radius:14px;
+  margin-bottom:14px;
+}
+
+.numero{
+  display:inline-block;
+  background:var(--amarillo);
+  color:#071f35;
+  padding:4px 9px;
+  border-radius:50%;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.card h3{
+  color:#092b4c;
+  margin-bottom:8px;
+}
+
+.como{
+  background:linear-gradient(135deg,#071f35,#003366);
+  color:white;
+}
+
+.como h2{
+  color:white;
+}
+
+.pasos-grid{
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+}
+
+.paso{
+  text-align:center;
+}
+
+.paso .num{
+  background:var(--amarillo);
+  color:#071f35;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.paso-icono{
+  font-size:50px;
+  margin-bottom:10px;
+}
+
+.beneficios-grid{
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+.beneficio img{
+  height:180px;
+  object-fit:cover;
+}
+
+.zonas{
+  background:white;
+  padding:24px;
+  border-radius:16px;
+  text-align:center;
+  font-size:19px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+
+.cta{
+  background:linear-gradient(135deg,#071f35,#0b4f87);
+  color:white;
+  text-align:center;
+}
+
+.cta h2{
+  color:white;
+}
+
+footer{
+  background:#050b12;
+  color:white;
+  text-align:center;
+  padding:25px;
+  font-size:14px;
+}
+
+.whatsapp-float{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:36px;
+  text-decoration:none;
+  z-index:999;
+  box-shadow:0 0 0 12px rgba(37,211,102,.18),0 10px 26px rgba(0,0,0,.35);
+  animation:pulse 1.6s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+  100%{transform:scale(1)}
+}
+
+@media(max-width:850px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .nav{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .badge{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    display:inline-block;
+    margin-top:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <img src="logo.jpeg" class="logo-nav" alt="RTV Servicios Electrónicos">
+    <a class="btn-phone" href="https://wa.me/51920643518">📞 Llámanos: 920 643 518</a>
+  </div>
+
+  <div class="hero">
+    <div>
+      <small>SERVICIO TÉCNICO ESPECIALIZADO</small>
+      <h1>Reparamos tu microondas, <span>como nuevo.</span></h1>
+      <ul class="checks">
+        <li>Diagnóstico por WhatsApp</li>
+        <li>Recojo y entrega</li>
+        <li>Garantía de 3 meses</li>
+      </ul>
+      <a class="btn" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20quiero%20enviar%20un%20video%20para%20diagnóstico%20de%20mi%20microondas.">
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+
+    <div class="hero-img">
+      <img src="logo.jpeg" class="logo-watermark" alt="">
+      <img src="MICROONDAS.png" class="microondas" alt="Microondas">
+      <div class="badge">🚚 Reparación con recojo y entrega</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>¿Tu microondas presenta alguno de estos problemas?</h2>
+
+    <div class="grid problemas-grid">
+      <div class="card">
+        <img src="01_no_calienta.jpg" alt="Microondas no calienta">
+        <span class="numero">01</span>
+        <h3>No calienta</h3>
+        <p>Revisamos magnetrón, capacitor, diodo y sistema de alta tensión.</p>
+      </div>
+
+      <div class="card">
+        <img src="02_se_apaga_solo.jpg" alt="Microondas se apaga solo">
+        <span class="numero">02</span>
+        <h3>Se apaga solo</h3>
+        <p>Evaluamos fusible, tarjeta, cableado y alimentación.</p>
+      </div>
+
+      <div class="card">
+        <img src="03_hace_ruidos_extranos.jpg" alt="Microondas hace ruidos extraños">
+        <span class="numero">03</span>
+        <h3>Hace ruidos extraños</h3>
+        <p>Detectamos fallas en motor, ventilador o componentes internos.</p>
+      </div>
+
+      <div class="card">
+        <img src="04_no_enciende.jpg" alt="Microondas no enciende">
+        <span class="numero">04</span>
+        <h3>No enciende</h3>
+        <p>Revisamos alimentación, switches de puerta y tarjeta electrónica.</p>
+      </div>
+
+      <div class="card">
+        <img src="05_chispas_microondas.jpg" alt="Microondas hace chispazos">
+        <span class="numero">05</span>
+        <h3>Hace chispazos</h3>
+        <p>Inspeccionamos mica, cavidad interna, grasa y humedad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="como">
+  <div class="container">
+    <h2>¿Cómo trabajamos?</h2>
+
+    <div class="grid pasos-grid">
+      <div class="paso">
+        <div class="num">1</div>
+        <div class="paso-icono">🟢</div>
+        <h3>Contáctanos</h3>
+        <p>Cuéntanos la falla por WhatsApp.</p>
+      </div>
+
+      <div class="paso">
+        <div class="num">2</div>
+        <div class="paso-icono">📋</div>
+        <h3>Diagnóstico</h3>
+        <p>Evaluamos el caso y te orientamos.</p>
+      </div>
+
+      <div class="paso">
+        <div class="num">3</div>
+        <div class="paso-icono">🛠️</div>
+        <h3>Reparación</h3>
+        <p>Usamos repuestos de calidad.</p>
+      </div>
+
+      <div class="paso">
+        <div class="num">4</div>
+        <div class="paso-icono">📦</div>
+        <h3>Entrega</h3>
+        <p>Probamos el equipo y lo devolvemos funcionando.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>¿Por qué elegir RTV?</h2>
+
+    <div class="grid beneficios-grid">
+      <div class="card beneficio">
+        <img src="01_tecnicos_especializados_page-0001.jpg" alt="Técnicos especializados">
+        <span class="numero">01</span>
+        <h3>Técnicos especializados</h3>
+        <p>Atención experta en reparación de microondas.</p>
+      </div>
+
+      <div class="card beneficio">
+        <img src="02_repuestos_calidad_page-0001.jpg" alt="Repuestos de calidad">
+        <span class="numero">02</span>
+        <h3>Repuestos de calidad</h3>
+        <p>Trabajamos con componentes confiables.</p>
+      </div>
+
+      <div class="card beneficio">
+        <img src="03_garantia_reparacion_page-0001.jpg" alt="Garantía de reparación">
+        <span class="numero">03</span>
+        <h3>Garantía de reparación</h3>
+        <p>Servicio respaldado con garantía de 3 meses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Zonas de atención</h2>
+    <div class="zonas">
+      📍 Surco · Miraflores · San Isidro · San Borja · Magdalena · San Miguel
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>¿Necesitas reparar tu microondas?</h2>
+    <p>Envíanos fotos o un video de la falla y recibe orientación inicial.</p>
+    <br>
+    <a class="btn" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20mi%20microondas%20presenta%20una%20falla.%20Quiero%20solicitar%20diagnóstico.">
+      Solicitar diagnóstico por WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>RTV Microondas | Servicio técnico especializado</p>
+  <p>WhatsApp: 920 643 518</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20quiero%20información%20sobre%20la%20reparación%20de%20mi%20microondas.">
+  ☎
+</a>
+
+</body>
+</html>

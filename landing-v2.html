@@ -28,16 +28,19 @@ header{
   overflow:hidden;
   color:white;
   background:
-  radial-gradient(circle at 15% 20%,rgba(255,194,71,.12),transparent 25%),
-  linear-gradient(135deg,#071f35 0%,#14364d 55%,#0b4f87 100%);
+    radial-gradient(circle at 15% 25%,rgba(255,194,71,.16),transparent 25%),
+    radial-gradient(circle at 85% 25%,rgba(255,255,255,.08),transparent 22%),
+    linear-gradient(135deg,#071f35 0%,#14364d 55%,#0b4f87 100%);
 }
 
 header::before{
   content:"";
   position:absolute;
   inset:0;
-  background-image:radial-gradient(rgba(255,255,255,.10) 1px,transparent 1px);
-  background-size:18px 18px;
+  background-image:
+    radial-gradient(rgba(255,255,255,.11) 1px,transparent 1px),
+    linear-gradient(45deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:18px 18px,34px 34px;
   opacity:.35;
 }
 
@@ -46,23 +49,28 @@ header::before{
   z-index:2;
   max-width:1200px;
   margin:auto;
-  padding:25px 20px 45px;
+  padding:24px 20px 35px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
 .logo-nav{
-  width:150px;
+  width:190px;
+  height:auto;
+  display:block;
+  border-radius:18px;
+  filter:drop-shadow(0 0 18px rgba(255,194,71,.25));
 }
 
 .btn-phone{
   background:var(--amarillo);
   color:var(--azul1);
-  padding:13px 20px;
-  border-radius:12px;
+  padding:14px 22px;
+  border-radius:14px;
   text-decoration:none;
   font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
 .hero{
@@ -70,22 +78,24 @@ header::before{
   z-index:2;
   max-width:1200px;
   margin:auto;
-  padding:10px 20px 75px;
+  padding:20px 20px 80px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:40px;
+  gap:35px;
   align-items:center;
 }
 
 .hero small{
   color:var(--amarillo);
   font-weight:bold;
+  font-size:17px;
+  letter-spacing:.5px;
 }
 
 .hero h1{
-  font-size:56px;
+  font-size:60px;
   line-height:1.05;
-  margin:15px 0;
+  margin:15px 0 20px;
 }
 
 .hero h1 span{
@@ -94,12 +104,12 @@ header::before{
 
 .checks{
   list-style:none;
-  font-size:19px;
-  margin:20px 0 28px;
+  font-size:21px;
+  margin:20px 0 30px;
 }
 
 .checks li{
-  margin:8px 0;
+  margin:9px 0;
 }
 
 .checks li::before{
@@ -107,21 +117,28 @@ header::before{
   background:var(--amarillo);
   color:var(--azul1);
   border-radius:50%;
-  padding:2px 7px;
-  margin-right:8px;
+  padding:2px 8px;
+  margin-right:9px;
   font-weight:bold;
 }
 
 .btn{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
   background:var(--verde);
   color:white;
-  padding:17px 30px;
-  border-radius:12px;
+  padding:18px 32px;
+  border-radius:14px;
   text-decoration:none;
   font-weight:bold;
-  font-size:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  font-size:19px;
+  box-shadow:0 12px 28px rgba(0,0,0,.28);
+}
+
+.whatsapp-icon{
+  width:26px;
+  height:26px;
 }
 
 .hero-img{
@@ -129,31 +146,30 @@ header::before{
   text-align:center;
 }
 
-.logo-watermark{
-  position:absolute;
-  right:0;
-  top:-80px;
-  width:430px;
-  opacity:.10;
-}
-
 .microondas{
   position:relative;
   z-index:2;
   width:100%;
-  max-width:560px;
-  filter:drop-shadow(0 28px 30px rgba(0,0,0,.45));
+  max-width:590px;
+  filter:drop-shadow(0 30px 30px rgba(0,0,0,.45));
+}
+
+.base-micro{
+  width:78%;
+  height:28px;
+  background:linear-gradient(90deg,transparent,rgba(255,194,71,.75),transparent);
+  margin:-18px auto 0;
+  border-radius:50%;
+  filter:blur(6px);
 }
 
 .badge{
-  position:absolute;
-  right:20px;
-  bottom:0;
-  z-index:3;
+  display:inline-block;
+  margin-top:25px;
   background:#071f35;
   border:2px solid var(--amarillo);
   color:white;
-  padding:16px 22px;
+  padding:16px 24px;
   border-radius:18px;
   font-weight:bold;
 }
@@ -170,7 +186,7 @@ section{
 h2{
   text-align:center;
   color:#092b4c;
-  font-size:34px;
+  font-size:36px;
   margin-bottom:35px;
 }
 
@@ -185,17 +201,18 @@ h2{
 
 .card{
   background:white;
-  border-radius:18px;
+  border-radius:20px;
   padding:18px;
-  box-shadow:0 10px 28px rgba(0,0,0,.09);
+  box-shadow:0 12px 30px rgba(0,0,0,.09);
   text-align:center;
 }
 
 .card img{
   width:100%;
-  height:145px;
-  object-fit:cover;
-  border-radius:14px;
+  height:155px;
+  object-fit:contain;
+  background:#f7f9fc;
+  border-radius:16px;
   margin-bottom:14px;
 }
 
@@ -203,7 +220,7 @@ h2{
   display:inline-block;
   background:var(--amarillo);
   color:#071f35;
-  padding:4px 9px;
+  padding:4px 10px;
   border-radius:50%;
   font-weight:bold;
   margin-bottom:8px;
@@ -212,10 +229,13 @@ h2{
 .card h3{
   color:#092b4c;
   margin-bottom:8px;
+  font-size:22px;
 }
 
 .como{
-  background:linear-gradient(135deg,#071f35,#003366);
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,194,71,.10),transparent 25%),
+    linear-gradient(135deg,#071f35,#003366);
   color:white;
 }
 
@@ -224,18 +244,19 @@ h2{
 }
 
 .pasos-grid{
-  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  grid-template-columns:repeat(4,1fr);
 }
 
 .paso{
   text-align:center;
+  padding:10px;
 }
 
 .paso .num{
   background:var(--amarillo);
   color:#071f35;
-  width:42px;
-  height:42px;
+  width:44px;
+  height:44px;
   border-radius:50%;
   display:inline-flex;
   align-items:center;
@@ -254,21 +275,24 @@ h2{
 }
 
 .beneficio img{
-  height:180px;
-  object-fit:cover;
+  height:210px;
+  object-fit:contain;
+  background:#f7f9fc;
 }
 
 .zonas{
   background:white;
-  padding:24px;
-  border-radius:16px;
+  padding:25px;
+  border-radius:18px;
   text-align:center;
-  font-size:19px;
-  box-shadow:0 8px 22px rgba(0,0,0,.08);
+  font-size:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .cta{
-  background:linear-gradient(135deg,#071f35,#0b4f87);
+  background:
+    radial-gradient(circle at 85% 30%,rgba(255,194,71,.13),transparent 25%),
+    linear-gradient(135deg,#071f35,#0b4f87);
   color:white;
   text-align:center;
 }
@@ -289,19 +313,29 @@ footer{
   position:fixed;
   right:22px;
   bottom:22px;
-  width:72px;
-  height:72px;
-  border-radius:50%;
-  background:#25D366;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:36px;
-  text-decoration:none;
   z-index:999;
+  text-decoration:none;
+  text-align:center;
+}
+
+.whatsapp-float img{
+  width:82px;
+  height:82px;
+  object-fit:cover;
+  border-radius:50%;
   box-shadow:0 0 0 12px rgba(37,211,102,.18),0 10px 26px rgba(0,0,0,.35);
   animation:pulse 1.6s infinite;
+}
+
+.whatsapp-float span{
+  display:block;
+  margin-top:8px;
+  background:#25D366;
+  color:white;
+  font-size:13px;
+  font-weight:bold;
+  padding:7px 10px;
+  border-radius:18px;
 }
 
 @keyframes pulse{
@@ -317,20 +351,31 @@ footer{
   }
 
   .hero h1{
-    font-size:40px;
+    font-size:42px;
   }
 
   .nav{
     flex-direction:column;
-    gap:15px;
+    gap:16px;
   }
 
-  .badge{
-    position:relative;
-    right:auto;
-    bottom:auto;
-    display:inline-block;
-    margin-top:15px;
+  .logo-nav{
+    width:170px;
+  }
+
+  .pasos-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:520px){
+  .pasos-grid{
+    grid-template-columns:1fr;
+  }
+
+  .whatsapp-float img{
+    width:68px;
+    height:68px;
   }
 }
 </style>
@@ -340,7 +385,7 @@ footer{
 
 <header>
   <div class="nav">
-    <img src="logo.jpeg" class="logo-nav" alt="RTV Servicios Electrónicos">
+    <img src="logo%20rtv.png" class="logo-nav" alt="RTV Servicios Electrónicos">
     <a class="btn-phone" href="https://wa.me/51920643518">📞 Llámanos: 920 643 518</a>
   </div>
 
@@ -348,19 +393,24 @@ footer{
     <div>
       <small>SERVICIO TÉCNICO ESPECIALIZADO</small>
       <h1>Reparamos tu microondas, <span>como nuevo.</span></h1>
+
       <ul class="checks">
         <li>Diagnóstico por WhatsApp</li>
         <li>Recojo y entrega</li>
         <li>Garantía de 3 meses</li>
       </ul>
+
       <a class="btn" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20quiero%20enviar%20un%20video%20para%20diagnóstico%20de%20mi%20microondas.">
+        <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="white">
+          <path d="M16.03 3C8.86 3 3.03 8.82 3.03 15.98c0 2.29.6 4.53 1.75 6.5L3 29l6.68-1.75a12.9 12.9 0 0 0 6.35 1.62C23.18 28.87 29 23.05 29 15.98 29 8.82 23.18 3 16.03 3zm0 23.65c-2.05 0-4.05-.55-5.8-1.6l-.42-.25-3.96 1.04 1.06-3.86-.27-.44a10.65 10.65 0 0 1-1.62-5.56c0-5.91 4.82-10.73 10.75-10.73s10.75 4.82 10.75 10.73c0 5.91-4.82 10.67-10.49 10.67zm5.89-8.02c-.32-.16-1.9-.94-2.19-1.05-.29-.11-.5-.16-.71.16-.21.32-.82 1.05-1 1.26-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.58-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.71-.98-2.35-.26-.62-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.4-.29.32-1.11 1.08-1.11 2.64s1.14 3.06 1.3 3.27c.16.21 2.25 3.44 5.45 4.82.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.9-.78 2.17-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.61-.37z"/>
+        </svg>
         Escríbenos por WhatsApp
       </a>
     </div>
 
     <div class="hero-img">
-      <img src="logo.jpeg" class="logo-watermark" alt="">
-      <img src="MICROONDAS.png" class="microondas" alt="Microondas">
+      <img src="Samsung-Microwave-Oven-PNG-Image.png" class="microondas" alt="Microondas Samsung">
+      <div class="base-micro"></div>
       <div class="badge">🚚 Reparación con recojo y entrega</div>
     </div>
   </div>
@@ -372,35 +422,35 @@ footer{
 
     <div class="grid problemas-grid">
       <div class="card">
-        <img src="01_no_calienta.jpg" alt="Microondas no calienta">
+        <img src="01_no_calienta.jpg" alt="No calienta">
         <span class="numero">01</span>
         <h3>No calienta</h3>
         <p>Revisamos magnetrón, capacitor, diodo y sistema de alta tensión.</p>
       </div>
 
       <div class="card">
-        <img src="02_se_apaga_solo.jpg" alt="Microondas se apaga solo">
+        <img src="02_se_apaga_solo.jpg" alt="Se apaga solo">
         <span class="numero">02</span>
         <h3>Se apaga solo</h3>
         <p>Evaluamos fusible, tarjeta, cableado y alimentación.</p>
       </div>
 
       <div class="card">
-        <img src="03_hace_ruidos_extranos.jpg" alt="Microondas hace ruidos extraños">
+        <img src="03_hace_ruidos_extranos.jpg" alt="Hace ruidos extraños">
         <span class="numero">03</span>
         <h3>Hace ruidos extraños</h3>
         <p>Detectamos fallas en motor, ventilador o componentes internos.</p>
       </div>
 
       <div class="card">
-        <img src="04_no_enciende.jpg" alt="Microondas no enciende">
+        <img src="04_no_enciende.jpg" alt="No enciende">
         <span class="numero">04</span>
         <h3>No enciende</h3>
         <p>Revisamos alimentación, switches de puerta y tarjeta electrónica.</p>
       </div>
 
       <div class="card">
-        <img src="05_chispas_microondas.jpg" alt="Microondas hace chispazos">
+        <img src="05_chispas_microondas.jpg" alt="Hace chispazos">
         <span class="numero">05</span>
         <h3>Hace chispazos</h3>
         <p>Inspeccionamos mica, cavidad interna, grasa y humedad.</p>
@@ -416,7 +466,7 @@ footer{
     <div class="grid pasos-grid">
       <div class="paso">
         <div class="num">1</div>
-        <div class="paso-icono">🟢</div>
+        <div class="paso-icono">📞</div>
         <h3>Contáctanos</h3>
         <p>Cuéntanos la falla por WhatsApp.</p>
       </div>
@@ -500,7 +550,8 @@ footer{
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20quiero%20información%20sobre%20la%20reparación%20de%20mi%20microondas.">
-  ☎
+  <img src="logo%20rtv.png" alt="Contactar por WhatsApp">
+  <span>Escríbenos</span>
 </a>
 
 </body>

@@ -1,287 +1,426 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RTV Microondas | Reparación con recojo y entrega</title>
-<meta name="description" content="Reparación de microondas con diagnóstico por WhatsApp, recojo, entrega, seguimiento digital y garantía de 3 meses.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RTV Microondas | Diagnóstico Online</title>
 
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #0b1b35;
+    }
 
-body{
-  font-family:Arial, sans-serif;
-  background:#f4f6f8;
-  color:#1d1d1f;
-  line-height:1.6;
-}
+    .diagnostico-section {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 40px 25px;
+      background: #ffffff;
+      border-radius: 22px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+      text-align: center;
+    }
 
-header{
-position:relative;
-overflow:hidden;
-background:linear-gradient(135deg,#071f35,#003366 55%,#005baa);
-color:white;
-padding:110px 20px;
-text-align:left;
-}
+    .badge {
+      display: inline-block;
+      background: #eef2f7;
+      color: #1d2f4a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 12px 22px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
 
-header h1{
-  font-size:44px;
-  margin-bottom:10px;
-}
+    h1 {
+      font-size: 38px;
+      margin: 10px 0;
+      color: #0b1b35;
+    }
 
-header p{
-  font-size:20px;
-  max-width:760px;
-  margin:0 auto 25px;
-}
+    .subtitle {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #5b677a;
+    }
 
-.btn{
-  display:inline-block;
-  background:#25D366;
-  color:white;
-  padding:16px 28px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:18px;
-}
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 45px;
+      margin: 25px 0 35px;
+      flex-wrap: wrap;
+    }
 
-section{
-  padding:55px 20px;
-}
+    .icon-box {
+      color: #6f8dad;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-}
+    .icon {
+      font-size: 34px;
+      display: block;
+      margin-bottom: 8px;
+    }
 
-h2{
-  text-align:center;
-  font-size:32px;
-  margin-bottom:30px;
-  color:#003366;
-}
+    .btn-main {
+      background: #b8003c;
+      color: #ffffff;
+      border: none;
+      padding: 18px 38px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 12px 25px rgba(184,0,60,0.25);
+      transition: 0.25s;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
-}
+    .btn-main:hover {
+      background: #940032;
+      transform: translateY(-2px);
+    }
 
-.card{
-  background:white;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
+    .warning {
+      margin-top: 35px;
+      background: #fff8e8;
+      border-left: 5px solid #f5a623;
+      color: #8a5310;
+      text-align: left;
+      padding: 18px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
 
-.card h3{
-  color:#005baa;
-  margin-bottom:10px;
-}
+    .diagnostico-box {
+      display: none;
+      margin-top: 35px;
+      text-align: left;
+      background: #f8fafc;
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px solid #e2e8f0;
+    }
 
-.steps{
-  counter-reset:step;
-}
+    .step {
+      display: none;
+    }
 
-.step{
-  background:white;
-  padding:22px;
-  border-radius:14px;
-  margin-bottom:18px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
+    .step.active {
+      display: block;
+    }
 
-.step::before{
-  counter-increment:step;
-  content:counter(step);
-  background:#ffc400;
-  color:#003366;
-  font-weight:bold;
-  padding:8px 14px;
-  border-radius:50%;
-  margin-right:10px;
-}
+    .step h2 {
+      font-size: 24px;
+      color: #0b1b35;
+      margin-bottom: 18px;
+    }
 
-.zonas{
-  text-align:center;
-  font-size:18px;
-  background:white;
-  border-radius:14px;
-  padding:25px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
 
-.cta{
-  background:#003366;
-  color:white;
-  text-align:center;
-}
+    .option {
+      background: #ffffff;
+      border: 2px solid #d9e2ec;
+      padding: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #1d2f4a;
+      transition: 0.2s;
+    }
 
-.cta h2{
-  color:white;
-}
+    .option:hover {
+      border-color: #b8003c;
+      background: #fff1f5;
+    }
 
-footer{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:25px;
-  font-size:14px;
-}
+    .result {
+      display: none;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid #d9e2ec;
+    }
 
-.whatsapp-float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#25D366;
-  color:white;
-  padding:16px 20px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 8px 20px rgba(0,0,0,0.25);
-}
-.logo-fondo{
-position:absolute;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-width:360px;
-height:360px;
-background-image:url(logo.jpeg);
-background-size:contain;
-background-repeat:no-repeat;
-background-position:center;
-opacity:0.14;
-pointer-events:none;
-z-index:0;
-}
+    .result h2 {
+      color: #b8003c;
+      margin-top: 0;
+    }
 
-header h1,
-header p,
-header a{
-position:relative;
-z-index:1;
-}
-@media(max-width:600px){
-  header h1{
-    font-size:34px;
-  }
+    .result-item {
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
 
-  header p{
-    font-size:17px;
-  }
-}
-</style>
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #25d366;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .restart-btn {
+      margin-top: 18px;
+      background: #0b1b35;
+      color: white;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .options {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-main {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo-fondo"></div>
-  
-  <h1>RTV Microondas</h1>
-  <p>Reparación especializada de microondas con diagnóstico por WhatsApp, recojo, entrega y garantía de 3 meses.</p>
-  <a class="btn" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20quiero%20enviar%20un%20video%20para%20diagnóstico%20de%20mi%20microondas.">
-    Enviar video por WhatsApp
-  </a>
-</header>
+<section class="diagnostico-section">
+  <span class="badge">Herramienta de evaluación rápida</span>
 
-<section>
-  <div class="container">
-    <h2>¿Tu microondas presenta alguna falla?</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>No calienta</h3>
-        <p>Revisamos magnetrón, capacitor, diodo, fusible y sistema de alta tensión.</p>
-      </div>
-      <div class="card">
-        <h3>No enciende</h3>
-        <p>Evaluamos fusible, tarjeta, cableado, switches de puerta y alimentación.</p>
-      </div>
-      <div class="card">
-        <h3>Hace chispazos</h3>
-        <p>Inspeccionamos mica, cavidad interna, restos de grasa, humedad y componentes dañados.</p>
-      </div>
-      <div class="card">
-        <h3>Plato no gira</h3>
-        <p>Revisamos motor, acople, base giratoria y conexiones internas.</p>
-      </div>
+  <h1>Diagnóstico Técnico Gratuito ONLINE</h1>
+
+  <p class="subtitle">
+    ¿Tu microondas presenta fallas? Usa nuestro simulador interactivo para identificar
+    el origen probable del problema antes de solicitar una revisión técnica.
+  </p>
+
+  <div class="icons">
+    <div class="icon-box">
+      <span class="icon">🔥</span>
+      NO CALIENTA
+    </div>
+    <div class="icon-box">
+      <span class="icon">⚡</span>
+      NO ENCIENDE
+    </div>
+    <div class="icon-box">
+      <span class="icon">🔊</span>
+      HACE RUIDO
     </div>
   </div>
-</section>
 
-<section>
-  <div class="container">
-    <h2>¿Cómo funciona el servicio?</h2>
-    <div class="steps">
-      <div class="step"><strong>Envías fotos o video por WhatsApp.</strong> Nos muestras la falla del equipo.</div>
-      <div class="step"><strong>Realizamos un diagnóstico preliminar.</strong> Te orientamos antes de recibir el microondas.</div>
-      <div class="step"><strong>Coordinamos recojo.</strong> Recogemos el equipo en tu domicilio o edificio.</div>
-      <div class="step"><strong>Reparamos y enviamos evidencia.</strong> Recibes fotos o videos del proceso.</div>
-      <div class="step"><strong>Entregamos el equipo probado.</strong> Incluye garantía de 3 meses.</div>
-    </div>
-  </div>
-</section>
+  <button class="btn-main" onclick="startDiagnostic()">▶ INICIAR DIAGNÓSTICO AHORA</button>
 
-<section>
-  <div class="container">
-    <h2>Beneficios</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Diagnóstico por WhatsApp</h3>
-        <p>Evita traslados innecesarios y recibe una primera orientación rápida.</p>
-      </div>
-      <div class="card">
-        <h3>Recojo y entrega</h3>
-        <p>Servicio pensado para clientes que valoran tiempo, comodidad y seguridad.</p>
-      </div>
-      <div class="card">
-        <h3>Seguimiento digital</h3>
-        <p>Te mantenemos informado durante el proceso de revisión y reparación.</p>
-      </div>
-      <div class="card">
-        <h3>Garantía de 3 meses</h3>
-        <p>Trabajo documentado, transparente y respaldado.</p>
+  <div class="diagnostico-box" id="diagnosticoBox">
+
+    <div class="step active" id="step1">
+      <h2>1. ¿Cuál es la falla principal?</h2>
+      <div class="options">
+        <div class="option" onclick="selectAnswer('falla', 'No calienta', 2)">No calienta</div>
+        <div class="option" onclick="selectAnswer('falla', 'No enciende', 2)">No enciende</div>
+        <div class="option" onclick="selectAnswer('falla', 'Hace chispas', 2)">Hace chispas</div>
+        <div class="option" onclick="selectAnswer('falla', 'Gira pero no calienta', 2)">Gira pero no calienta</div>
+        <div class="option" onclick="selectAnswer('falla', 'Hace ruido fuerte', 2)">Hace ruido fuerte</div>
+        <div class="option" onclick="selectAnswer('falla', 'Se apaga solo', 2)">Se apaga solo</div>
       </div>
     </div>
-  </div>
-</section>
 
-<section>
-  <div class="container">
-    <h2>Zonas de atención</h2>
-    <div class="zonas">
-      Surco · Miraflores · San Isidro · San Borja · Magdalena · San Miguel
+    <div class="step" id="step2">
+      <h2>2. ¿Qué tipo de microondas tienes?</h2>
+      <div class="options">
+        <div class="option" onclick="selectAnswer('tipo', 'Convencional', 3)">Convencional</div>
+        <div class="option" onclick="selectAnswer('tipo', 'Inverter', 3)">Inverter</div>
+        <div class="option" onclick="selectAnswer('tipo', 'Con grill', 3)">Con grill</div>
+        <div class="option" onclick="selectAnswer('tipo', 'Empotrable', 3)">Empotrable</div>
+        <div class="option" onclick="selectAnswer('tipo', 'No estoy seguro', 3)">No estoy seguro</div>
+      </div>
+    </div>
+
+    <div class="step" id="step3">
+      <h2>3. ¿Qué marca es?</h2>
+      <div class="options">
+        <div class="option" onclick="selectAnswer('marca', 'LG', 4)">LG</div>
+        <div class="option" onclick="selectAnswer('marca', 'Samsung', 4)">Samsung</div>
+        <div class="option" onclick="selectAnswer('marca', 'Panasonic', 4)">Panasonic</div>
+        <div class="option" onclick="selectAnswer('marca', 'Mabe', 4)">Mabe</div>
+        <div class="option" onclick="selectAnswer('marca', 'Oster / Electrolux / Miray / Otro', 4)">Oster / Electrolux / Miray / Otro</div>
+      </div>
+    </div>
+
+    <div class="step" id="step4">
+      <h2>4. ¿Ocurrió algo antes de la falla?</h2>
+      <div class="options">
+        <div class="option" onclick="selectAnswer('causa', 'Corte de luz', 5)">Hubo corte de luz</div>
+        <div class="option" onclick="selectAnswer('causa', 'Se escuchó un ruido fuerte', 5)">Se escuchó un ruido fuerte</div>
+        <div class="option" onclick="selectAnswer('causa', 'Salieron chispas', 5)">Salieron chispas</div>
+        <div class="option" onclick="selectAnswer('causa', 'No ocurrió nada extraño', 5)">No ocurrió nada extraño</div>
+        <div class="option" onclick="selectAnswer('causa', 'Se mojó o le cayó líquido', 5)">Se mojó o le cayó líquido</div>
+      </div>
+    </div>
+
+    <div class="step" id="step5">
+      <h2>5. ¿Cuánto tiempo tiene el equipo?</h2>
+      <div class="options">
+        <div class="option" onclick="selectAnswer('antiguedad', 'Menos de 1 año', 'result')">Menos de 1 año</div>
+        <div class="option" onclick="selectAnswer('antiguedad', '1 a 3 años', 'result')">1 a 3 años</div>
+        <div class="option" onclick="selectAnswer('antiguedad', '3 a 5 años', 'result')">3 a 5 años</div>
+        <div class="option" onclick="selectAnswer('antiguedad', 'Más de 5 años', 'result')">Más de 5 años</div>
+      </div>
+    </div>
+
+    <div class="result" id="resultBox">
+      <h2>Resultado del diagnóstico preliminar</h2>
+
+      <div class="result-item"><strong>Equipo:</strong> Microondas</div>
+      <div class="result-item"><strong>Falla reportada:</strong> <span id="resFalla"></span></div>
+      <div class="result-item"><strong>Tipo:</strong> <span id="resTipo"></span></div>
+      <div class="result-item"><strong>Marca:</strong> <span id="resMarca"></span></div>
+      <div class="result-item"><strong>Posible causa:</strong> <span id="resCausaProbable"></span></div>
+      <div class="result-item"><strong>Nivel de urgencia:</strong> <span id="resUrgencia"></span></div>
+      <div class="result-item"><strong>Rango referencial:</strong> <span id="resPrecio"></span></div>
+      <div class="result-item"><strong>Tiempo estimado:</strong> 24 a 48 horas según disponibilidad de repuesto.</div>
+
+      <a id="whatsappLink" class="whatsapp-btn" target="_blank">
+        Enviar diagnóstico por WhatsApp
+      </a>
+
+      <br />
+      <button class="restart-btn" onclick="restartDiagnostic()">Realizar nuevo diagnóstico</button>
     </div>
   </div>
-</section>
 
-<section class="cta">
-  <div class="container">
-    <h2>Solicita diagnóstico ahora</h2>
-    <p>Envía un video mostrando la falla de tu microondas y recibe una orientación inicial.</p>
-    <br>
-    <a class="btn" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20mi%20microondas%20presenta%20una%20falla.%20Quiero%20solicitar%20diagnóstico.">
-      Contactar por WhatsApp
-    </a>
+  <div class="warning">
+    ⚠️ <strong>AVISO IMPORTANTE:</strong> Este diagnóstico es orientativo y no reemplaza
+    una revisión técnica física. No manipules el microondas internamente, ya que trabaja
+    con componentes de alta tensión incluso después de estar desconectado.
   </div>
 </section>
 
-<footer>
-  <p>RTV Microondas | Diagnóstico, reparación, recojo y entrega</p>
-  <p>WhatsApp: 920 643 518</p>
-</footer>
+<script>
+  const respuestas = {};
 
-<a class="whatsapp-float" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20quiero%20información%20sobre%20la%20reparación%20de%20mi%20microondas.">
-  WhatsApp
-</a>
+  function startDiagnostic() {
+    document.getElementById("diagnosticoBox").style.display = "block";
+    document.getElementById("diagnosticoBox").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function selectAnswer(key, value, nextStep) {
+    respuestas[key] = value;
+
+    document.querySelectorAll(".step").forEach(step => {
+      step.classList.remove("active");
+    });
+
+    if (nextStep === "result") {
+      showResult();
+    } else {
+      document.getElementById("step" + nextStep).classList.add("active");
+    }
+  }
+
+  function showResult() {
+    let causaProbable = "";
+    let urgencia = "";
+    let precio = "";
+
+    const falla = respuestas.falla;
+
+    if (falla === "No calienta" || falla === "Gira pero no calienta") {
+      causaProbable = "Posible falla en magnetrón, diodo de alta tensión, capacitor, fusible HV o tarjeta inverter.";
+      urgencia = "Media";
+      precio = "S/ 120 a S/ 280 aproximadamente.";
+    } 
+    else if (falla === "No enciende") {
+      causaProbable = "Posible falla en fusible principal, tarjeta electrónica, switch de puerta, cable de alimentación o fuente interna.";
+      urgencia = "Alta";
+      precio = "S/ 90 a S/ 250 aproximadamente.";
+    } 
+    else if (falla === "Hace chispas") {
+      causaProbable = "Posible mica quemada, restos de grasa carbonizada, pintura interna dañada o problema en la cavidad.";
+      urgencia = "Alta. No se recomienda seguir usándolo.";
+      precio = "S/ 80 a S/ 180 aproximadamente.";
+    } 
+    else if (falla === "Hace ruido fuerte") {
+      causaProbable = "Posible falla en motor de plato, ventilador, transformador, magnetrón o soporte interno.";
+      urgencia = "Media";
+      precio = "S/ 90 a S/ 230 aproximadamente.";
+    } 
+    else if (falla === "Se apaga solo") {
+      causaProbable = "Posible sobrecalentamiento, falla en ventilación, tarjeta electrónica, sensores térmicos o consumo excesivo.";
+      urgencia = "Media-Alta";
+      precio = "S/ 100 a S/ 260 aproximadamente.";
+    } 
+    else {
+      causaProbable = "Se requiere evaluación técnica para determinar la falla exacta.";
+      urgencia = "Media";
+      precio = "Según diagnóstico técnico.";
+    }
+
+    if (respuestas.tipo === "Inverter") {
+      causaProbable += " Al ser inverter, también puede estar involucrada la tarjeta inverter o el sistema electrónico de potencia.";
+      precio = "S/ 150 a S/ 380 aproximadamente.";
+    }
+
+    document.getElementById("resFalla").innerText = respuestas.falla;
+    document.getElementById("resTipo").innerText = respuestas.tipo;
+    document.getElementById("resMarca").innerText = respuestas.marca;
+    document.getElementById("resCausaProbable").innerText = causaProbable;
+    document.getElementById("resUrgencia").innerText = urgencia;
+    document.getElementById("resPrecio").innerText = precio;
+
+    const mensaje = `Hola RTV Microondas, realicé el diagnóstico online y estos son mis datos:%0A%0A` +
+      `Equipo: Microondas%0A` +
+      `Falla: ${respuestas.falla}%0A` +
+      `Tipo: ${respuestas.tipo}%0A` +
+      `Marca: ${respuestas.marca}%0A` +
+      `Situación previa: ${respuestas.causa}%0A` +
+      `Antigüedad: ${respuestas.antiguedad}%0A%0A` +
+      `Quisiera solicitar una revisión técnica.`;
+
+    document.getElementById("whatsappLink").href = `https://wa.me/51920643518?text=${mensaje}`;
+
+    document.getElementById("resultBox").style.display = "block";
+    document.getElementById("resultBox").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function restartDiagnostic() {
+    Object.keys(respuestas).forEach(key => delete respuestas[key]);
+
+    document.getElementById("resultBox").style.display = "none";
+
+    document.querySelectorAll(".step").forEach(step => {
+      step.classList.remove("active");
+    });
+
+    document.getElementById("step1").classList.add("active");
+  }
+</script>
 
 </body>
 </html>

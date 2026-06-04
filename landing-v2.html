@@ -131,24 +131,62 @@ header::before{
 }
 
 .hero-img{
+  position:relative;
+  min-height:500px;
   text-align:center;
 }
 
-.microondas{
-  width:100%;
-  max-width:590px;
-  filter:drop-shadow(0 30px 30px rgba(0,0,0,.45));
+.microondas-composicion{
+  position:relative;
+}
+
+.microondas-item{
+  position:absolute;
+  object-fit:contain;
+  filter:drop-shadow(0 24px 25px rgba(0,0,0,.38));
+}
+
+.micro-lg{
+  width:43%;
+  left:0;
+  top:25px;
+  z-index:2;
+}
+
+.micro-electrolux{
+  width:43%;
+  right:0;
+  top:10px;
+  z-index:1;
+  opacity:.85;
+}
+
+.micro-samsung{
+  width:58%;
+  left:5%;
+  top:215px;
+  z-index:4;
+}
+
+.micro-oster{
+  width:42%;
+  right:0;
+  top:235px;
+  z-index:5;
 }
 
 .base-micro{
-  width:78%;
-  height:30px;
-  background:linear-gradient(90deg,transparent,rgba(255,194,71,.7),transparent);
-  margin:-10px auto 0;
+  position:absolute;
+  left:50%;
+  bottom:65px;
+  transform:translateX(-50%);
+  width:82%;
+  height:34px;
+  background:linear-gradient(90deg,transparent,rgba(255,194,71,.75),transparent);
   border-radius:50%;
-  filter:blur(7px);
+  filter:blur(9px);
+  z-index:0;
 }
-
 .badge{
   display:inline-block;
   margin-top:24px;
@@ -347,6 +385,7 @@ footer{
 }
 
 @media(max-width:850px){
+
   .nav{
     flex-direction:column;
     gap:15px;
@@ -364,17 +403,40 @@ footer{
   .pasos-grid{
     grid-template-columns:repeat(2,1fr);
   }
+
+  .hero-img{
+    min-height:430px;
+  }
+
+  .micro-lg{
+    width:46%;
+    left:0;
+    top:10px;
+  }
+
+  .micro-electrolux{
+    width:46%;
+    right:0;
+    top:5px;
+  }
+
+  .micro-samsung{
+    width:62%;
+    left:3%;
+    top:185px;
+  }
+
+  .micro-oster{
+    width:45%;
+    right:0;
+    top:205px;
+  }
+
+  .base-micro{
+    bottom:65px;
+  }
+
 }
-
-@media(max-width:520px){
-  .pasos-grid{
-    grid-template-columns:1fr;
-  }
-
-  .whatsapp-float img{
-    width:68px;
-    height:68px;
-  }
 }
 </style>
 </head>
@@ -403,11 +465,14 @@ footer{
       </a>
     </div>
 
-  <div class="hero-img microondas-composicion">
+ <div class="hero-img microondas-composicion">
 
   <img src="microondasLGlanding01.png" class="microondas-item micro-lg" alt="Microondas LG">
+
   <img src="microondasELECTROLUXlanding02.png" class="microondas-item micro-electrolux" alt="Microondas Electrolux">
+
   <img src="microondasSAMSUMGlanding03.png" class="microondas-item micro-samsung" alt="Microondas Samsung">
+
   <img src="microondasOSTERlanding04.png" class="microondas-item micro-oster" alt="Microondas Oster">
 
   <div class="base-micro"></div>

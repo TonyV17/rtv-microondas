@@ -6,6 +6,59 @@
 <title>RTV Microondas | Reparación especializada</title>
 
 <style>
+  .microondas-composicion{
+  position:relative;
+  width:650px;
+  height:500px;
+  margin:auto;
+}
+
+.microondas-item{
+  position:absolute;
+  object-fit:contain;
+  filter:drop-shadow(0 25px 25px rgba(0,0,0,.40));
+}
+
+.micro-lg{
+  width:260px;
+  top:40px;
+  left:40px;
+  z-index:3;
+}
+
+.micro-electrolux{
+  width:220px;
+  top:90px;
+  right:40px;
+  z-index:2;
+}
+
+.micro-samsung{
+  width:520px;
+  bottom:0;
+  left:60px;
+  z-index:4;
+}
+
+.micro-oster{
+  width:290px;
+  bottom:15px;
+  right:0;
+  z-index:5;
+}
+
+.base-micro{
+  position:absolute;
+  width:520px;
+  height:28px;
+  background:rgba(0,0,0,.45);
+  border-radius:50%;
+  bottom:-10px;
+  left:50%;
+  transform:translateX(-50%);
+  filter:blur(12px);
+  z-index:0;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 
 :root{
@@ -136,9 +189,6 @@ header::before{
   text-align:center;
 }
 
-.microondas-composicion{
-    position:relative;
-    height:620px;
 }
 
 /* Halo de luz */
@@ -495,50 +545,8 @@ footer{
       </a>
     </div>
 
-.microondas-composition{
-    position:relative;
-    width:650px;
-    height:500px;
-    margin:auto;
-}
 
-/* Samsung grande al frente */
-.micro-samsung{
-    position:absolute;
-    width:520px;
-    bottom:0;
-    left:60px;
-    z-index:4;
-}
-
-/* LG arriba izquierda */
-.micro-lg{
-    position:absolute;
-    width:260px;
-    top:40px;
-    left:40px;
-    z-index:3;
-}
-
-/* Electrolux arriba derecha */
-.micro-electrolux{
-    position:absolute;
-    width:220px;
-    top:90px;
-    right:40px;
-    z-index:2;
-}
-
-/* Oster delante derecha */
-.micro-oster{
-    position:absolute;
-    width:290px;
-    bottom:15px;
-    right:0;
-    z-index:5;
-}
 </header>
-
 <section>
   <div class="container">
     <h2>¿Tu microondas presenta alguno de estos problemas?</h2>
@@ -681,3 +689,4 @@ footer{
 
 </body>
 </html>
+

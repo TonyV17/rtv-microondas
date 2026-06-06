@@ -54,11 +54,11 @@ header::before{
 }
 
 .logo-nav{
-  width:185px;
-  border-radius:18px;
-  filter:drop-shadow(0 0 18px rgba(255,194,71,.25));
+    width:280px;
+    border-radius:22px;
+    filter:drop-shadow(0 0 35px rgba(255,194,71,.45));
+    transition:all .3s ease;
 }
-
 .btn-phone{
   background:var(--amarillo);
   color:var(--azul1);
@@ -495,21 +495,48 @@ footer{
       </a>
     </div>
 
- <div class="hero-img microondas-composicion">
+.microondas-composition{
+    position:relative;
+    width:650px;
+    height:500px;
+    margin:auto;
+}
 
-  <img src="microondasLGlanding01.png" class="microondas-item micro-lg" alt="Microondas LG">
+/* Samsung grande al frente */
+.micro-samsung{
+    position:absolute;
+    width:520px;
+    bottom:0;
+    left:60px;
+    z-index:4;
+}
 
-  <img src="microondasELECTROLUXlanding02.png" class="microondas-item micro-electrolux" alt="Microondas Electrolux">
+/* LG arriba izquierda */
+.micro-lg{
+    position:absolute;
+    width:260px;
+    top:40px;
+    left:40px;
+    z-index:3;
+}
 
-  <img src="microondasSAMSUMGlanding03.png" class="microondas-item micro-samsung" alt="Microondas Samsung">
+/* Electrolux arriba derecha */
+.micro-electrolux{
+    position:absolute;
+    width:220px;
+    top:90px;
+    right:40px;
+    z-index:2;
+}
 
-  <img src="microondasOSTERlanding04.png" class="microondas-item micro-oster" alt="Microondas Oster">
-
-  <div class="base-micro"></div>
-
-  <div class="badge">🚚 Reparación con recojo y entrega</div>
-
-</div>
+/* Oster delante derecha */
+.micro-oster{
+    position:absolute;
+    width:290px;
+    bottom:15px;
+    right:0;
+    z-index:5;
+}
 </header>
 
 <section>

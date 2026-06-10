@@ -516,25 +516,34 @@ footer{
 }
 
 .microondas-base{
-  position:absolute;
-  bottom:70px;
-  width:560px;
-  max-width:85%;
-  height:55px;
-  background:rgba(0,0,0,.38);
-  filter:blur(20px);
-  border-radius:50%;
-  z-index:1;
+    position:absolute;
+    bottom:45px;
+
+    width:650px;
+    height:70px;
+
+    background:rgba(0,0,0,.45);
+
+    border-radius:50%;
+
+    filter:blur(28px);
+
+    z-index:1;
 }
 
 .microondas-principal{
-  position:relative;
-  width:100%;
-  max-width:720px;
-  height:auto;
-  object-fit:contain;
-  z-index:2;
-  filter:drop-shadow(0 28px 35px rgba(0,0,0,.45));
+    position:relative;
+    width:100%;
+    max-width:900px;
+    height:auto;
+    object-fit:contain;
+    z-index:2;
+
+    transform:translateX(-60px) translateY(-40px);
+
+    filter:drop-shadow(
+        0 35px 45px rgba(0,0,0,.45)
+    );
 }
 </style>
 </head>

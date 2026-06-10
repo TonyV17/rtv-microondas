@@ -506,6 +506,36 @@ footer{
 
 }
 }
+  .microondas-showcase{
+  position:relative;
+  width:100%;
+  min-height:500px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.microondas-base{
+  position:absolute;
+  bottom:70px;
+  width:560px;
+  max-width:85%;
+  height:55px;
+  background:rgba(0,0,0,.38);
+  filter:blur(20px);
+  border-radius:50%;
+  z-index:1;
+}
+
+.microondas-principal{
+  position:relative;
+  width:100%;
+  max-width:720px;
+  height:auto;
+  object-fit:contain;
+  z-index:2;
+  filter:drop-shadow(0 28px 35px rgba(0,0,0,.45));
+}
 </style>
 </head>
 
@@ -531,8 +561,13 @@ footer{
       <a class="btn" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20quiero%20enviar%20un%20video%20para%20diagnóstico%20de%20mi%20microondas.">
         🟢 Escríbenos por WhatsApp
       </a>
-    </div>
-
+</div>
+<div class="hero-img">
+  <div class="microondas-showcase">
+    <div class="microondas-base"></div>
+    <img src="microondaspngpng.png" alt="Microondas RTV" class="microondas-principal">
+  </div>
+</div>
 
 </header>
 <section>

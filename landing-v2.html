@@ -5,61 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RTV Microondas | Reparación especializada</title>
 <style>
-  .microondas-composicion{
-  position:relative;
-  width:650px;
-  height:500px;
-  margin:auto;
-}
-
-.microondas-item{
-  position:absolute;
-  object-fit:contain;
-  filter:drop-shadow(0 25px 25px rgba(0,0,0,.40));
-}
-
-.micro-lg{
-  width:260px;
-  top:40px;
-  left:40px;
-  z-index:3;
-}
-
-.micro-electrolux{
-  width:220px;
-  top:90px;
-  right:40px;
-  z-index:2;
-}
-
-.micro-samsung{
-  width:520px;
-  bottom:0;
-  left:60px;
-  z-index:4;
-}
-
-.micro-oster{
-  width:290px;
-  bottom:15px;
-  right:0;
-  z-index:5;
-}
-
-.base-micro{
-  position:absolute;
-  width:520px;
-  height:28px;
-  background:rgba(0,0,0,.45);
-  border-radius:50%;
-  bottom:-10px;
-  left:50%;
-  transform:translateX(-50%);
-  filter:blur(12px);
-  z-index:0;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-
 :root{
   --azul1:#071f35;
   --azul2:#14364d;
@@ -184,7 +129,10 @@ header::before{
 
 .hero-img{
   position:relative;
-  min-height:560px;
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .microondas-composicion{
@@ -502,42 +450,42 @@ footer{
   .base-micro{
     bottom:65px;
   }
-
 }
-}
-  .microondas-showcase{
-    position:relative;
-    width:100%;
-    min-height:560px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.microondas-showcase{
+  position:relative;
+  width:100%;
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .microondas-base{
-    position:absolute;
-    bottom:45px;
-
-    width:1000px;
-    height:100px;
-
-    background:rgba(0,0,0,.45);
-
-    border-radius:50%;
-
-    filter:blur(28px);
-
-    z-index:1;
+  position:absolute;
+  bottom:80px;
+  width:850px;
+  max-width:95%;
+  height:95px;
+  background:radial-gradient(
+      ellipse,
+      rgba(0,0,0,.55),
+      rgba(0,0,0,.23) 48%,
+      transparent 78%
+  );
+  filter:blur(28px);
+  border-radius:50%;
+  z-index:2;
 }
-
 .microondas-principal{
-    width:1200px;
-    max-width:none;
-    height:auto;
-    object-fit:contain;
-    z-index:2;
-    transform:translateX(-120px) translateY(10px);
-    filter:drop-shadow(0 35px 50px rgba(0,0,0,.50));
+  position:relative;
+  z-index:3;
+  width:1120px;
+  max-width:none;
+  height:auto;
+  transform:translateX(-110px) translateY(20px);
+  filter:drop-shadow(
+      0 38px 55px rgba(0,0,0,.55)
+  );
 }
   .trabajo-real{
     max-width:1200px;
@@ -549,15 +497,47 @@ footer{
     width:100%;
     display:block;
     border-radius:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.06),
-               0 20px 60px rgba(0,0,0,.08);
+    box-shadow:
+      0 10px 30px rgba(0,0,0,.06),
+      0 20px 60px rgba(0,0,0,.08);
+}
+.halo-microondas{
+  position:absolute;
+  width:640px;
+  height:640px;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,194,71,.42),
+      rgba(255,194,71,.13) 38%,
+      transparent 68%
+    );
+  filter:blur(8px);
+  z-index:1;
+}
+
+.halo-microondas::before{
+  content:"";
+  position:absolute;
+  inset:-55px;
+  border-radius:50%;
+  border:1px solid rgba(255,194,71,.32);
+}
+
+.halo-microondas::after{
+  content:"";
+  position:absolute;
+  inset:-110px;
+  border-radius:50%;
+  border:1px solid rgba(255,194,71,.18);
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="hero-rtv">
   <div class="nav">
     <img src="logo.jpeg" class="logo-nav" alt="RTV Servicios Electrónicos">
     <a class="btn-phone" href="https://wa.me/51920643518">📞 Llámanos: 920 643 518</a>
@@ -579,10 +559,15 @@ footer{
       </a>
  </div>
 <div class="hero-img">
-  <div class="microondas-showcase">
+<div class="microondas-showcase">
+    <div class="halo-microondas"></div>
     <div class="microondas-base"></div>
-    <img src="microondaspngpng.png" alt="Microondas RTV" class="microondas-principal">
-  </div>
+
+    <img
+      src="microondaspngpng.png"
+      alt="Microondas RTV"
+      class="microondas-principal">
+</div>
   </div>
 
 </header>

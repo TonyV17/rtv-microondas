@@ -552,39 +552,69 @@ footer{
     box-shadow:0 10px 30px rgba(0,0,0,.06),
                0 20px 60px rgba(0,0,0,.08);
 }
+.trabajo-real img{
+   max-width:100%;
+   border-radius:20px;
+}
+
+/* PEGA AQUÍ TODO EL CÓDIGO NUEVO */
+
+.hero-rtv{
+   position:relative;
+   overflow:hidden;
+   ...
+}
+
+.hero-rtv::before{
+   ...
+}
+
+.hero-rtv::after{
+   ...
+}
+
+/* sigue todo el bloque */
+
+</style>
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="hero-rtv">
   <div class="nav">
     <img src="logo.jpeg" class="logo-nav" alt="RTV Servicios Electrónicos">
     <a class="btn-phone" href="https://wa.me/51920643518">📞 Llámanos: 920 643 518</a>
   </div>
 
   <div class="hero">
-    <div>
+    <div class="hero-text">
       <small>SERVICIO TÉCNICO ESPECIALIZADO</small>
-      <h1>Reparamos tu microondas, <span>como nuevo.</span></h1>
+
+      <h1>
+        Reparamos<br>
+        tu<br>
+        microondas,<br>
+        <span>como nuevo.</span>
+      </h1>
 
       <ul class="checks">
         <li>Diagnóstico por WhatsApp</li>
         <li>Recojo y entrega a domicilio</li>
-        <li>Garantía de 3 meses</li>
+        <li>Garantía de servicio</li>
       </ul>
 
-      <a class="btn" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20quiero%20enviar%20un%20video%20para%20diagnóstico%20de%20mi%20microondas.">
+      <a class="btn" href="https://wa.me/51920643518?text=Hola%20RTV%20Microondas,%20quiero%20solicitar%20diagnóstico%20para%20mi%20microondas.">
         🟢 Escríbenos por WhatsApp
       </a>
- </div>
-<div class="hero-img">
-  <div class="microondas-showcase">
-    <div class="microondas-base"></div>
-    <img src="microondaspngpng.png" alt="Microondas RTV" class="microondas-principal">
-  </div>
-  </div>
+    </div>
 
+    <div class="hero-img">
+      <div class="halo-microondas"></div>
+      <div class="base-microondas"></div>
+      <img src="microondaspngpng.png" class="microondas-principal" alt="Microondas RTV">
+    </div>
+  </div>
 </header>
 <section>
   <div class="container">

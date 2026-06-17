@@ -108,27 +108,23 @@
       color: #ffffff;
     }
 
-    .hero-icons {
-      display: flex;
-      gap: 35px;
-      flex-wrap: wrap;
-      margin-bottom: 38px;
-    }
+.hero-icons{
+    display:flex;
+    gap:35px;
+    align-items:center;
+    margin:40px 0;
+    flex-wrap:wrap;
+}
 
-    .hero-icon {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 16px;
-      font-weight: 800;
-      color: #ffffff;
-    }
+.hero-badge{
+    width:170px;
+    height:auto;
+    transition:.3s;
+}
 
-    .hero-icon img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-    }
+.hero-badge:hover{
+    transform:scale(1.05);
+}
 
     .secure {
       margin-top: 18px;
@@ -360,7 +356,7 @@
 <body>
 
   <header class="header">
-    <img src="logo rtv.png" alt="RTV Servicios Electrónicos" class="logo">
+    <img src="logo.jpeg" class="logo">
 
     <nav class="nav">
       <a href="#">Inicio</a>
@@ -390,22 +386,15 @@
         y te damos un presupuesto antes de cualquier reparación.
       </p>
 
-      <div class="hero-icons">
-        <div class="hero-icon">
-          <img src="diagnóstico en menos de 24 horas.png" alt="">
-          <span>Diagnóstico en<br>menos de 24h</span>
-        </div>
+<div class="hero-icons">
 
-        <div class="hero-icon">
-          <img src="video de kla falla antes de reparar.png" alt="">
-          <span>Video de la falla<br>antes de reparar</span>
-        </div>
+    <img src="diagnóstico en menos de 24 horas.png" class="hero-badge">
 
-        <div class="hero-icon">
-          <img src="garantía por escrito.png" alt="">
-          <span>Garantía por<br>escrito</span>
-        </div>
-      </div>
+    <img src="video de kla falla antes de reparar.png" class="hero-badge">
+
+    <img src="garantía por escrito.png" class="hero-badge">
+
+</div>
 
       <a class="btn-whatsapp" href="https://wa.me/51999999999" target="_blank">
         Solicitar Diagnóstico por WhatsApp →
@@ -580,7 +569,7 @@
   </section>
 
   <footer class="footer">
-    <img src="logo rtv.png" alt="RTV">
+    <img src="logo.jpeg" class="logo">
     <p>© 2024 RTV Servicios Electrónicos</p>
     <p>📍 Lima Metropolitana</p>
     <p>🕒 Atención: Lunes a Sábado 9:00 am - 7:00 pm</p>

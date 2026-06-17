@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RTV Laptops | Diagnóstico Experto</title>
 
   <style>
@@ -13,9 +13,9 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      color: #07152f;
+      font-family: Arial, Helvetica, sans-serif;
       background: #ffffff;
+      color: #07152f;
     }
 
     a {
@@ -26,13 +26,14 @@
       background: #06162d;
       padding: 18px 5%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-      width: 120px;
+      width: 170px;
       height: auto;
+      object-fit: contain;
     }
 
     .nav {
@@ -42,53 +43,58 @@
     }
 
     .nav a {
-      color: white;
+      color: #ffffff;
+      font-weight: 700;
       font-size: 15px;
-      font-weight: 600;
     }
 
     .btn-whatsapp {
-      background: #25d366;
-      color: white;
-      padding: 14px 24px;
-      border-radius: 10px;
-      font-weight: bold;
+      background: #22c55e;
+      color: #ffffff;
+      padding: 16px 28px;
+      border-radius: 12px;
+      font-weight: 800;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 8px 20px rgba(34,197,94,0.3);
     }
 
     .hero {
-      min-height: 620px;
+      min-height: 660px;
       background:
-        linear-gradient(90deg, rgba(3,14,30,0.98) 0%, rgba(3,14,30,0.90) 35%, rgba(3,14,30,0.25) 70%),
+        linear-gradient(90deg, rgba(6,22,45,0.98) 0%, rgba(6,22,45,0.92) 34%, rgba(6,22,45,0.25) 63%, rgba(6,22,45,0.05) 100%),
         url("imagen de laptop para fondo de la parte superior.png");
       background-size: cover;
       background-position: center right;
-      padding: 70px 5%;
-      color: white;
+      background-repeat: no-repeat;
+      padding: 75px 5%;
+      color: #ffffff;
       display: flex;
       align-items: center;
     }
 
     .hero-content {
-      max-width: 520px;
+      max-width: 560px;
     }
 
     .tag {
-      background: #0b73ff;
-      padding: 10px 18px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: bold;
       display: inline-block;
-      margin-bottom: 25px;
+      background: #0b73ff;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 11px 20px;
+      border-radius: 25px;
+      margin-bottom: 30px;
     }
 
     .hero h1 {
-      font-size: 54px;
+      font-size: 58px;
       line-height: 1.05;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
+      color: #ffffff;
     }
 
     .hero h1 span {
@@ -96,76 +102,80 @@
     }
 
     .hero p {
-      font-size: 19px;
+      font-size: 20px;
       line-height: 1.6;
-      margin-bottom: 30px;
+      margin-bottom: 32px;
+      color: #ffffff;
     }
 
     .hero-icons {
       display: flex;
-      gap: 30px;
-      margin-bottom: 35px;
+      gap: 35px;
       flex-wrap: wrap;
+      margin-bottom: 38px;
     }
 
     .hero-icon {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: bold;
-      font-size: 14px;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
     }
 
     .hero-icon img {
-      width: 36px;
-      height: 36px;
+      width: 58px;
+      height: 58px;
       object-fit: contain;
     }
 
     .secure {
-      font-size: 14px;
-      margin-top: 15px;
-      opacity: 0.9;
+      margin-top: 18px;
+      font-size: 15px;
+      color: #ffffff;
     }
 
     .benefits {
+      padding: 45px 5%;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      padding: 45px 5%;
-      background: white;
+      gap: 28px;
+      background: #ffffff;
     }
 
     .benefit {
       display: flex;
-      gap: 18px;
       align-items: center;
+      gap: 18px;
     }
 
     .benefit img {
-      width: 64px;
-      height: 64px;
+      width: 72px;
+      height: 72px;
       object-fit: contain;
     }
 
     .benefit h3 {
-      font-size: 17px;
-      margin-bottom: 6px;
+      font-size: 18px;
+      margin-bottom: 7px;
+      color: #07152f;
     }
 
     .benefit p {
-      font-size: 14px;
+      font-size: 15px;
       color: #4b5563;
     }
 
     section {
-      padding: 35px 5%;
+      padding: 45px 5%;
     }
 
     .section-title {
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 35px;
+      font-size: 34px;
+      margin-bottom: 42px;
+      color: #07152f;
     }
 
     .steps {
@@ -177,45 +187,45 @@
     .step {
       background: #ffffff;
       border: 1px solid #e5eaf3;
-      border-radius: 12px;
-      padding: 30px 18px;
+      border-radius: 14px;
+      padding: 35px 18px 28px;
       text-align: center;
       position: relative;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
     }
 
     .number {
       position: absolute;
-      top: -15px;
+      top: -17px;
       left: 50%;
       transform: translateX(-50%);
+      width: 35px;
+      height: 35px;
       background: #0b73ff;
-      color: white;
-      width: 32px;
-      height: 32px;
+      color: #ffffff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
+      font-weight: 800;
     }
 
     .step img {
-      width: 58px;
-      height: 58px;
+      width: 70px;
+      height: 70px;
       object-fit: contain;
       margin-bottom: 18px;
     }
 
     .step h3 {
-      font-size: 16px;
+      font-size: 17px;
       margin-bottom: 12px;
     }
 
     .step p {
-      font-size: 14px;
-      color: #4b5563;
+      font-size: 15px;
       line-height: 1.5;
+      color: #4b5563;
     }
 
     .cases {
@@ -225,29 +235,30 @@
     }
 
     .case {
-      background: white;
-      border-radius: 12px;
+      background: #ffffff;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.09);
       text-align: center;
     }
 
     .case img {
       width: 100%;
-      height: 150px;
+      height: 160px;
       object-fit: cover;
+      display: block;
     }
 
     .case h3 {
-      font-size: 16px;
-      padding: 15px 10px 8px;
+      font-size: 18px;
+      padding: 17px 10px 8px;
     }
 
     .case small {
       display: flex;
       justify-content: space-around;
-      padding: 0 0 16px;
       color: #6b7280;
+      padding-bottom: 18px;
     }
 
     .trust {
@@ -255,64 +266,68 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 25px;
       background: #f8fbff;
-      border-radius: 16px;
-      padding: 35px;
+      border-radius: 18px;
+      padding: 38px;
     }
 
     .trust-item {
       display: flex;
-      gap: 16px;
       align-items: center;
+      gap: 16px;
     }
 
     .trust-item img {
-      width: 58px;
-      height: 58px;
+      width: 70px;
+      height: 70px;
       object-fit: contain;
     }
 
     .trust-item h3 {
-      font-size: 16px;
-      margin-bottom: 5px;
+      font-size: 17px;
+      margin-bottom: 6px;
     }
 
     .trust-item p {
-      font-size: 14px;
+      font-size: 15px;
       color: #4b5563;
+      line-height: 1.4;
     }
 
     .cta {
       background: #06162d;
-      color: white;
+      color: #ffffff;
       text-align: center;
-      padding: 55px 5%;
-      background-image: linear-gradient(135deg, #06162d, #021022);
+      padding: 60px 5%;
     }
 
     .cta h2 {
-      font-size: 36px;
+      font-size: 38px;
       margin-bottom: 12px;
     }
 
     .cta p {
-      margin-bottom: 25px;
+      font-size: 18px;
+      margin-bottom: 28px;
     }
 
     .footer {
       background: #111827;
-      color: white;
-      padding: 20px 5%;
+      color: #ffffff;
+      padding: 22px 5%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 20px;
       font-size: 14px;
     }
 
     .footer img {
-      width: 80px;
+      width: 95px;
+      height: auto;
+      object-fit: contain;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
       .nav {
         display: none;
       }
@@ -320,11 +335,11 @@
       .hero {
         min-height: auto;
         padding: 60px 5%;
-        background-position: center;
+        background-position: center right;
       }
 
       .hero h1 {
-        font-size: 40px;
+        font-size: 42px;
       }
 
       .benefits,
@@ -336,7 +351,6 @@
 
       .footer {
         flex-direction: column;
-        gap: 15px;
         text-align: center;
       }
     }
@@ -351,7 +365,7 @@
     <nav class="nav">
       <a href="#">Inicio</a>
       <a href="#como-funciona">¿Cómo funciona?</a>
-      <a href="#casos">Servicios</a>
+      <a href="#servicios">Servicios</a>
       <a href="#casos">Casos reales</a>
       <a href="#garantia">Garantía</a>
       <a href="#contacto">Contacto</a>
@@ -367,8 +381,8 @@
       <div class="tag">DIAGNÓSTICO EXPERTO • TRANSPARENCIA DIGITAL</div>
 
       <h1>
-        Reparamos tu laptop <br>
-        <span>con transparencia <br>y garantía</span>
+        Reparamos tu laptop<br>
+        <span>con transparencia<br>y garantía</span>
       </h1>
 
       <p>
@@ -379,17 +393,17 @@
       <div class="hero-icons">
         <div class="hero-icon">
           <img src="diagnóstico en menos de 24 horas.png" alt="">
-          Diagnóstico en<br>menos de 24h
+          <span>Diagnóstico en<br>menos de 24h</span>
         </div>
 
         <div class="hero-icon">
           <img src="video de kla falla antes de reparar.png" alt="">
-          Video de la falla<br>antes de reparar
+          <span>Video de la falla<br>antes de reparar</span>
         </div>
 
         <div class="hero-icon">
           <img src="garantía por escrito.png" alt="">
-          Garantía por<br>escrito
+          <span>Garantía por<br>escrito</span>
         </div>
       </div>
 
@@ -401,7 +415,7 @@
     </div>
   </section>
 
-  <section class="benefits">
+  <section class="benefits" id="servicios">
     <div class="benefit">
       <img src="recogo y entrega a domicilio.png" alt="">
       <div>
@@ -450,7 +464,7 @@
         <div class="number">2</div>
         <img src="recojo o recepción.png" alt="">
         <h3>Recojo o recepción</h3>
-        <p>Recogemos tu laptop o la recibes en nuestro taller de forma segura.</p>
+        <p>Recogemos tu laptop o la recibimos en nuestro taller de forma segura.</p>
       </div>
 
       <div class="step">
@@ -483,25 +497,37 @@
       <div class="case">
         <img src="cambio de pantalla.png" alt="">
         <h3>Cambio de pantalla</h3>
-        <small><span>Antes</span><span>Después</span></small>
+        <small>
+          <span>Antes</span>
+          <span>Después</span>
+        </small>
       </div>
 
       <div class="case">
         <img src="reparación de la placa.png" alt="">
         <h3>Reparación de placa</h3>
-        <small><span>Antes</span><span>Después</span></small>
+        <small>
+          <span>Antes</span>
+          <span>Después</span>
+        </small>
       </div>
 
       <div class="case">
         <img src="cambio de teclado.png" alt="">
         <h3>Cambio de teclado</h3>
-        <small><span>Antes</span><span>Después</span></small>
+        <small>
+          <span>Antes</span>
+          <span>Después</span>
+        </small>
       </div>
 
       <div class="case">
         <img src="recuperación de sistema.png" alt="">
         <h3>Recuperación de sistema</h3>
-        <small><span>Antes</span><span>Después</span></small>
+        <small>
+          <span>Antes</span>
+          <span>Después</span>
+        </small>
       </div>
     </div>
   </section>
@@ -527,7 +553,7 @@
       </div>
 
       <div class="trust-item">
-        <img src="todas nuestras reparaciones incluyen garantía.png" alt="">
+        <img src="garantía por escrito.png" alt="">
         <div>
           <h3>Garantía por escrito</h3>
           <p>Todas nuestras reparaciones incluyen garantía.</p>
@@ -548,7 +574,7 @@
     <h2>Agenda tu diagnóstico hoy</h2>
     <p>Escríbenos por WhatsApp y recibe atención inmediata.</p>
 
-    <a class="btn-whatsapp" href="https://wa.me/51920643518" target="_blank">
+    <a class="btn-whatsapp" href="https://wa.me/51999999999" target="_blank">
       Solicitar Diagnóstico por WhatsApp →
     </a>
   </section>

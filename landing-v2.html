@@ -537,14 +537,19 @@ footer{
 
 <body>
 
-<header class="hero-rtv">
-  <div class="nav">
-    <img src="logo.jpeg" class="logo-nav" alt="RTV Servicios Electrónicos">
-    <a class="btn-phone" href="https://wa.me/51920643518">📞 Llámanos: 920 643 518</a>
+<header class="hero-rtv" id="inicio">
+<div class="nav">
+  <img src="logo.jpeg" class="logo-nav" alt="RTV Servicios Electrónicos">
+
+  <div class="menu-nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#problemas">Servicios</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#contacto">Contacto</a>
   </div>
 
-  <div class="hero">
-    <div>
+  <a class="btn-phone" href="https://wa.me/51920643518">📞 Llámanos: 920 643 518</a>
+</div>
       <small>SERVICIO TÉCNICO ESPECIALIZADO</small>
       <h1>Reparamos tu microondas, <span>como nuevo.</span></h1>
 
@@ -571,7 +576,7 @@ footer{
   </div>
 
 </header>
-<section>
+<section id="problemas">
   <div class="container">
     <h2>¿Tu microondas presenta alguno de estos problemas?</h2>
 
@@ -613,9 +618,11 @@ footer{
     </div>
   </div>
 </section>
-<div class="trabajo-real">
-    <img src="imagenantesdespués.JPG" alt="Trabajo real RTV Microondas">
-</div>
+<section class="trabajo-real" id="portafolio">
+  <h2>Portafolio de trabajos reales</h2>
+  <p>Antes y después de microondas reparados por RTV.</p>
+  <img src="imagenantesdespués.JPG" alt="Antes y después de reparación de microondas RTV">
+</section>
   
 <section class="como">
   <div class="container">
@@ -693,7 +700,7 @@ footer{
   </div>
 </section>
 
-<section class="cta">
+<section class="cta" id="contacto">
   <div class="container">
     <h2>¿Necesitas reparar tu microondas?</h2>
     <p>Envíanos fotos o un video de la falla y recibe orientación inicial.</p>

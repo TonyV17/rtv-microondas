@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RTV Microondas | Reparación especializada</title>
+
 <style>
 :root{
   --azul1:#071f35;
@@ -13,11 +14,21 @@
   --verde:#25D366;
 }
 
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
 body{
   font-family:Arial,sans-serif;
   background:#f5f7fb;
   color:#0b1b35;
   line-height:1.6;
+}
+
+section{
+  padding:70px 20px;
 }
 
 header{
@@ -44,18 +55,39 @@ header::before{
   z-index:2;
   max-width:1200px;
   margin:auto;
-  padding:24px 20px 35px;
+  padding:24px 40px 35px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:28px;
 }
 
 .logo-nav{
-    width:280px;
-    border-radius:22px;
-    filter:drop-shadow(0 0 35px rgba(255,194,71,.45));
-    transition:all .3s ease;
+  width:280px;
+  border-radius:22px;
+  filter:drop-shadow(0 0 35px rgba(255,194,71,.45));
+  transition:all .3s ease;
 }
+
+.menu-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+}
+
+.menu-nav a{
+  color:#ffffff;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:700;
+  transition:.3s;
+}
+
+.menu-nav a:hover{
+  color:var(--amarillo);
+}
+
 .btn-phone{
   background:var(--amarillo);
   color:var(--azul1);
@@ -63,6 +95,7 @@ header::before{
   border-radius:14px;
   font-weight:bold;
   text-decoration:none;
+  white-space:nowrap;
 }
 
 .hero{
@@ -70,23 +103,29 @@ header::before{
   z-index:2;
   max-width:1200px;
   margin:auto;
-  padding:25px 20px 80px;
+  padding:25px 40px 80px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:45px;
+  grid-template-columns:48% 52%;
+  gap:15px;
   align-items:center;
+}
+
+.hero-texto{
+  padding-left:40px;
 }
 
 .hero small{
   color:var(--amarillo);
   font-weight:bold;
   font-size:17px;
+  letter-spacing:.5px;
 }
 
 .hero h1{
-  font-size:58px;
-  line-height:1.05;
+  font-size:72px;
+  line-height:1;
   margin:15px 0 20px;
+  font-weight:800;
 }
 
 .hero h1 span{
@@ -135,88 +174,74 @@ header::before{
   justify-content:center;
 }
 
-.microondas-composicion{
+.microondas-showcase{
   position:relative;
-  width:680px;
-  max-width:100%;
-  height:520px;
-  margin:auto;
+  width:100%;
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-.microondas-composicion::before{
-  content:"";
+.microondas-base{
   position:absolute;
-  left:50%;
-  top:55%;
-  transform:translate(-50%,-50%);
-  width:720px;
-  height:420px;
-  background:radial-gradient(ellipse, rgba(255,194,71,.28), rgba(255,194,71,.08) 45%, transparent 75%);
-  filter:blur(30px);
-  z-index:0;
-}
-
-.microondas-item{
-  position:absolute;
-  object-fit:contain;
-  filter:drop-shadow(0 25px 25px rgba(0,0,0,.42));
-}
-
-.micro-lg{
-  width:310px;
-  left:10px;
-  top:45px;
+  bottom:80px;
+  width:850px;
+  max-width:95%;
+  height:95px;
+  background:radial-gradient(
+    ellipse,
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.23) 48%,
+    transparent 78%
+  );
+  filter:blur(28px);
+  border-radius:50%;
   z-index:2;
 }
 
-.micro-electrolux{
-  width:330px;
-  right:35px;
-  top:20px;
+.microondas-principal{
+  position:relative;
+  z-index:3;
+  width:1050px;
+  max-width:none;
+  height:auto;
+  transform:translateX(90px) translateY(40px);
+  filter:drop-shadow(0 38px 55px rgba(0,0,0,.55));
+}
+
+.halo-microondas{
+  position:absolute;
+  width:640px;
+  height:640px;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,194,71,.42),
+      rgba(255,194,71,.13) 38%,
+      transparent 68%
+    );
+  filter:blur(8px);
   z-index:1;
-  opacity:.96;
 }
 
-.micro-samsung{
-  width:520px;
-  left:40px;
-  top:210px;
-  z-index:4;
-}
-
-.micro-oster{
-  width:350px;
-  right:0;
-  top:220px;
-  z-index:5;
-}
-
-.base-micro{
+.halo-microondas::before{
+  content:"";
   position:absolute;
-  left:50%;
-  bottom:20px;
-  transform:translateX(-50%);
-  width:82%;
-  height:38px;
-  background:radial-gradient(ellipse, rgba(0,0,0,.45), transparent 70%);
-  filter:blur(12px);
-  z-index:0;
+  inset:-55px;
+  border-radius:50%;
+  border:1px solid rgba(255,194,71,.32);
 }
 
-.badge{
+.halo-microondas::after{
+  content:"";
   position:absolute;
-  left:50%;
-  bottom:-45px;
-  transform:translateX(-50%);
-  z-index:10;
-  white-space:nowrap;
-  background:#071f35;
-  border:2px solid var(--amarillo);
-  color:white;
-  padding:15px 24px;
-  border-radius:18px;
-  font-weight:bold;
+  inset:-110px;
+  border-radius:50%;
+  border:1px solid rgba(255,194,71,.18);
 }
+
 .container{
   max-width:1150px;
   margin:auto;
@@ -400,19 +425,33 @@ footer{
 }
 
 @media(max-width:850px){
-
   .nav{
     flex-direction:column;
     gap:15px;
+    padding:22px 20px 30px;
+  }
+
+  .menu-nav{
+    flex-wrap:wrap;
+    gap:18px;
   }
 
   .hero{
     grid-template-columns:1fr;
     text-align:center;
+    padding:25px 24px 70px;
+  }
+
+  .hero-texto{
+    padding-left:0;
   }
 
   .hero h1{
     font-size:42px;
+  }
+
+  .checks{
+    font-size:18px;
   }
 
   .pasos-grid{
@@ -423,114 +462,23 @@ footer{
     min-height:430px;
   }
 
-  .micro-lg{
-    width:46%;
-    left:0;
-    top:10px;
+  .microondas-showcase{
+    min-height:430px;
   }
 
-  .micro-electrolux{
-    width:46%;
-    right:0;
-    top:5px;
+  .microondas-principal{
+    width:700px;
+    transform:translateX(20px) translateY(20px);
   }
 
-  .micro-samsung{
-    width:62%;
-    left:3%;
-    top:185px;
+  .halo-microondas{
+    width:420px;
+    height:420px;
   }
 
-  .micro-oster{
-    width:45%;
-    right:0;
-    top:205px;
+  .microondas-base{
+    bottom:45px;
   }
-
-  .base-micro{
-    bottom:65px;
-  }
-}
-.microondas-showcase{
-  position:relative;
-  width:100%;
-  min-height:620px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.microondas-base{
-  position:absolute;
-  bottom:80px;
-  width:850px;
-  max-width:95%;
-  height:95px;
-  background:radial-gradient(
-      ellipse,
-      rgba(0,0,0,.55),
-      rgba(0,0,0,.23) 48%,
-      transparent 78%
-  );
-  filter:blur(28px);
-  border-radius:50%;
-  z-index:2;
-}
-.microondas-principal{
-  position:relative;
-  z-index:3;
-  width:1050px;
-  max-width:none;
-  height:auto;
-  transform:translateX(160px) translateY(40px);
-  filter:drop-shadow(
-      0 38px 55px rgba(0,0,0,.55)
-  );
-}
-  .trabajo-real{
-    max-width:1200px;
-    margin:70px auto;
-    padding:0 20px;
-}
-
-.trabajo-real img{
-    width:100%;
-    display:block;
-    border-radius:30px;
-    box-shadow:
-      0 10px 30px rgba(0,0,0,.06),
-      0 20px 60px rgba(0,0,0,.08);
-}
-.halo-microondas{
-  position:absolute;
-  width:640px;
-  height:640px;
-  border-radius:50%;
-  background:
-    radial-gradient(
-      circle,
-      rgba(255,194,71,.42),
-      rgba(255,194,71,.13) 38%,
-      transparent 68%
-    );
-  filter:blur(8px);
-  z-index:1;
-}
-
-.halo-microondas::before{
-  content:"";
-  position:absolute;
-  inset:-55px;
-  border-radius:50%;
-  border:1px solid rgba(255,194,71,.32);
-}
-
-.halo-microondas::after{
-  content:"";
-  position:absolute;
-  inset:-110px;
-  border-radius:50%;
-  border:1px solid rgba(255,194,71,.18);
 }
 </style>
 </head>
@@ -597,6 +545,7 @@ footer{
   </div>
 
 </header>
+
 <section id="problemas">
   <div class="container">
     <h2>¿Tu microondas presenta alguno de estos problemas?</h2>
@@ -639,6 +588,7 @@ footer{
     </div>
   </div>
 </section>
+
 <section class="trabajo-real" id="portafolio">
   <h2>Portafolio de trabajos reales</h2>
   <p>Antes y después de microondas reparados por RTV.</p>
@@ -744,5 +694,3 @@ footer{
 
 </body>
 </html>
-
-
